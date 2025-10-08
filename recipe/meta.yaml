@@ -1,5 +1,5 @@
 {% set name = "cytoplay" %}
-{% set version = "0.0.11" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ae66c811169ec0d31ab7c304bb38941767929a0ebca26f3ea57183092aea578a
+  sha256: 84b36f9a8df6d00321a5f9743f948e889f3059dec548ea98e2256e56c42059b7 
 build:
   skip: true  # [win]
-  number: 0
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
 
 requirements:
@@ -35,10 +35,14 @@ requirements:
     - xorg-libxi
     - xorg-libxmu
     - xorg-libx11  # [linux]
+    - xorg-xproto  # [linux]
     - glew
-    - zlib 
+    - zlib
+    - ncurses      # [linux] 
   run:
     - python
+    - xorg-libx11  # [linux]
+    - ncurses      # [linux]
 
 test:
   requires:
