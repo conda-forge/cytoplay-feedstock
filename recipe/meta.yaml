@@ -1,17 +1,17 @@
 {% set name = "cytoplay" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 84b36f9a8df6d00321a5f9743f948e889f3059dec548ea98e2256e56c42059b7 
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 3b466a8c40270744264cacc0576c8ce1cfae2f307a88f7d03a3bb6481e4802aa
 build:
   skip: true  # [win]
-  number: 2
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
@@ -19,7 +19,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - cmake >=3.14
-    - make 
+    - make
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
