@@ -10,7 +10,7 @@ source:
   sha256: 84b36f9a8df6d00321a5f9743f948e889f3059dec548ea98e2256e56c42059b7 
 build:
   skip: true  # [win]
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation 
 
 requirements:
@@ -40,6 +40,7 @@ requirements:
     - zlib 
   run:
     - python
+    - xorg-libx11  # [linux]
 
 test:
   requires:
