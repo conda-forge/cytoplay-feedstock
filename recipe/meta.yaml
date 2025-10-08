@@ -37,10 +37,12 @@ requirements:
     - xorg-libx11  # [linux]
     - xorg-xproto  # [linux]
     - glew
-    - zlib 
+    - zlib
+    - ncurses      # [linux] 
   run:
     - python
     - xorg-libx11  # [linux]
+    - ncurses      # [linux]
 
 test:
   requires:
