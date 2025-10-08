@@ -1,5 +1,5 @@
 {% set name = "cytoplay" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 95d4751d488343e93a4952ffda89f3e02e08032accef2ca1b0e7fc9b7a11d17c
+  sha256: 780cbffcb784acfd3aec57dc2cb2cb6ddf3f7aa6af4a0bfc7222dfec3f89de05 
 build:
   skip: true  # [win]
   number: 0
