@@ -10,7 +10,7 @@ source:
   sha256: 67d0adf28b570e637e54adb11055cab16a90e5744e6b7e3faaa4c920f32b1fb6
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -43,7 +43,8 @@ requirements:
     - python
     - xorg-libx11  # [linux]
     - ncurses      # [linux]
-
+    - libgl        # [linux]
+    
 test:
   requires:
     - pip
