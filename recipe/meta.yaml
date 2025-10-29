@@ -43,7 +43,7 @@ requirements:
     - python
     - xorg-libx11  # [linux]
     - ncurses      # [linux]
-    - libgl        # [linux] 
+    - libgl        # [linux]
     
 test:
   requires:
